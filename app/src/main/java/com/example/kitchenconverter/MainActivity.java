@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.*;
@@ -21,7 +22,7 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener {
     private Spinner mSpinnerFraction, mSpinnerMeasurement, mSpinnerMeasurement2;
-    private Double mFrom, mTo;
+    private double mFrom, mTo;
     private EditText wholeNumber;
     private Measurement mMeasurement;
     private String typeFrom, typeTo;
@@ -31,16 +32,17 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("SETUP", "setting up fields");
         initializeFields();
+        Log.d("SETUP", "setting up first spinner");
         setUpSpinner1();
+        Log.d("SETUP", "setting up second spinner");
         setUpSpinner2();
+        Log.d("SETUP", "setting up third spinner");
         setUpSpinner3();
     }
-
-
-
-
     private void initializeFields() {
+        Log.d("SETUP", "creating measurement object");
         mMeasurement = new Measurement();
         formatter = new DecimalFormat("00.00");
     }
@@ -51,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, fractions);
         mSpinnerFraction.setAdapter(adapter);
         mSpinnerFraction.setOnItemSelectedListener(this);
-
     }
 
     private void setUpSpinner2() {
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        Log.d("CALC", "calculating mFrom based on whole number and fraction");
         if (view.equals(mSpinnerFraction)){
             if (i==0){
                 mFrom=Double.parseDouble(wholeNumber.getText().toString());
@@ -78,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             else {
                 String strFraction = (String) adapterView.getItemAtPosition(i);
                 double decimal = convertToDecimal(strFraction);
+                Log.d("CONV_RECIPE", "Decimal: " + decimal);
                 mFrom = Integer.parseInt(wholeNumber.getText().toString()) + decimal;
             }
         }
@@ -98,9 +101,9 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     public void onNothingSelected(AdapterView<?> adapterView) {
         typeFrom="cup";
         typeTo="tbsp";
-
     }
     public void calcResults(View view){
+        Log.d("CALC", "type to: "+typeTo+" typeFrom "+typeFrom+" mFrom "+mFrom+" mTo: "+mTo);
         if (mFrom==0.0){
             Snackbar.make(view, "The measurement cannot be empty.", Snackbar.LENGTH_LONG).show();
         }
