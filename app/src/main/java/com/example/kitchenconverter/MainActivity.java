@@ -3,7 +3,6 @@ package com.example.kitchenconverter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -23,5 +22,4 @@ public class MainActivity extends AppCompatActivity {
 //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
     }
-
-
+}
