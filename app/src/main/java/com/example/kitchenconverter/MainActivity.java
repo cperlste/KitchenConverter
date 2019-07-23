@@ -46,41 +46,25 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     }
 
     private void setUpSpinner1() {
-        //get the spinner from the xml.
         mSpinnerFraction = findViewById(R.id.spinner_fraction);
-
-//create a list of items for the spinner.
         String[] fractions = new String[]{"none", "3/4", "2/3", "1/2", "1/3", "1/4", "1/8", "1/16"};
-//create an adapter to describe how the items are displayed, adapters are used in several places in android.
-//There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, fractions);
-//set the spinners adapter to the previously created one.
         mSpinnerFraction.setAdapter(adapter);
         mSpinnerFraction.setOnItemSelectedListener(this);
 
     }
 
     private void setUpSpinner2() {
-        //get the spinner from the xml.
         mSpinnerMeasurement = findViewById(R.id.spinner_measurement);
-//create a list of items for the spinner.
         String[] measurements = new String[]{"cup", "teaspoons", "tablespoons", "ounces"};
-//create an adapter to describe how the items are displayed, adapters are used in several places in android.
-//There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, measurements);
-//set the spinners adapter to the previously created one.
         mSpinnerMeasurement.setAdapter(adapter);
     }
 
     private void setUpSpinner3() {
-        //get the spinner from the xml.
         mSpinnerMeasurement2 = findViewById(R.id.spinner_measurement2);
-//create a list of items for the spinner.
         String[] measurements = new String[]{"cup", "teaspoons", "tablespoons", "ounces"};
-//create an adapter to describe how the items are displayed, adapters are used in several places in android.
-//There are multiple variations of this, but this is the basic variant.
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, measurements);
-//set the spinners adapter to the previously created one.
         mSpinnerMeasurement2.setAdapter(adapter);
         mSpinnerMeasurement2.setOnItemSelectedListener(this);
     }
@@ -184,4 +168,22 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             mTo=mMeasurement.tbspToTsp(mFrom);
         }
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        outState.putDouble("AMT_FROM",mFrom);
+        outState.putDouble("AMT_TO", mTo);
+        outState.putString("TYPE_FROM", typeFrom);
+        outState.putString("TYPE_TO", typeTo);
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        mFrom=savedInstanceState.getDouble("AMT_FROM");
+        mTo=savedInstanceState.getDouble("AMT_TO");
+        typeFrom=savedInstanceState.getString("TYPE_FROM");
+        typeTo=savedInstanceState.getString("TYPE_TO");
+
+    }
+
 }
