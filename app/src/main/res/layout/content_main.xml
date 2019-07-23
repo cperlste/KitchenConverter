@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     tools:layout_editor_absoluteX="54dp"
+    android:layout_marginTop="45dp"
     tools:showIn="@layout/activity_main">
 
     <EditText
@@ -32,9 +33,11 @@
         android:layout_marginTop="8dp"
         android:background="@android:drawable/btn_dropdown"
         android:padding="@dimen/standard_border"
+        android:layout_margin="@dimen/standard_border"
         android:spinnerMode="dropdown"
         app:layout_constraintStart_toEndOf="@+id/enter_measure"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <Spinner
         android:id="@+id/spinner_measurement"
@@ -54,8 +57,6 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:onClick="calcResults"
