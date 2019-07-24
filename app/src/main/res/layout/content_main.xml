@@ -18,7 +18,7 @@
         android:layout_margin="@dimen/standard_border"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="@dimen/standard_border"
-        android:hint="Enter measurement"
+        android:hint="Enter number"
         android:inputType="number"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="@+id/spinner_fraction"
@@ -29,7 +29,7 @@
 
     <Spinner
         android:id="@+id/spinner_fraction"
-        android:layout_width="@dimen/spinner_width"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/spinner_hieght"
         android:layout_margin="@dimen/standard_border"
         android:layout_marginTop="8dp"
@@ -40,7 +40,7 @@
 
     <Spinner
         android:id="@+id/spinner_measurement"
-        android:layout_width="@dimen/spinner_width"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/spinner_hieght"
         android:layout_margin="@dimen/standard_border"
         android:layout_marginTop="8dp"
@@ -64,8 +64,8 @@
 
     <TextView
         android:id="@+id/converted_output"
-        android:layout_width="10dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
        android:layout_margin="@dimen/standard_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,14 +77,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/standard_border"
         android:text="Convert to:"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@+id/spinner_measurement2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/spinner_measurement2" />
 
     <Spinner
         android:id="@+id/spinner_measurement2"
-        android:layout_width="@dimen/spinner_width"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/spinner_hieght"
         android:layout_margin="@dimen/standard_border"
         android:layout_marginTop="@dimen/standard_border"
@@ -95,5 +95,18 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner_fraction">
 
     </Spinner>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Reset All"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/converted_output"
+        android:onClick="resetAll"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
