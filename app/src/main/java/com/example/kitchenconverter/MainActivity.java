@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void initializeFields() {
         mMeasurement = new Measurement();
         wholeNumber=findViewById(R.id.enter_measure);
-        mTVresults=findViewById(R.id.tv_results);
+        mTVresults=findViewById(R.id.converted_output);
     }
 
     private void setUpSpinner1() {
