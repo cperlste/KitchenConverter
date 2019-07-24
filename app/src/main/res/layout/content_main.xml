@@ -18,7 +18,8 @@
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="Enter Text to convert"
+        android:hint="@string/enter_whole_number_to_convert"
+        android:inputType="number"
         android:padding="@dimen/standard_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +62,7 @@
         android:layout_marginEnd="8dp"
         android:onClick="calcResults"
         android:padding="@dimen/standard_border"
-        android:text="Button"
+        android:text="Calculate Results"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_measurement" />
 
@@ -105,5 +106,14 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner_fraction">
 
     </Spinner>
+
+    <TextView
+        android:id="@+id/tv_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/converted_output"
+        app:layout_constraintEnd_toEndOf="@+id/converted_output"
+        app:layout_constraintStart_toStartOf="@+id/converted_output" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kitchen Converter</string>
+    <string name="enter_whole_number_to_convert">Enter whole number to convert</string>
 </resources>
