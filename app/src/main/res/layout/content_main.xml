@@ -115,5 +115,10 @@
         app:layout_constraintBottom_toBottomOf="@+id/converted_output"
         app:layout_constraintEnd_toEndOf="@+id/converted_output"
         app:layout_constraintStart_toStartOf="@+id/converted_output" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="reset"
+        android:onClick="resetAll"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

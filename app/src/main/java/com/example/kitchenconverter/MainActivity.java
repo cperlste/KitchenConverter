@@ -91,9 +91,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             //cup to oz
             if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("ounces")) {
-                mMeasurement.setCup(mFrom);
                 mTo = mMeasurement.cupToOz(mFrom);
-                mMeasurement.setOz(mTo);
             }
             //oz to cup
             else if (typeFrom.equalsIgnoreCase("ounces") && typeTo.equalsIgnoreCase("cups")) {
@@ -162,6 +160,15 @@ public class MainActivity extends AppCompatActivity {
         typeFrom = savedInstanceState.getString("TYPE_FROM");
         typeTo = savedInstanceState.getString("TYPE_TO");
 
+    }
+    public void resetAll(View view) {
+        mTVresults.setText(" ");
+        mFrom=0.0;
+        mTo=0.0;
+        wholeNumber.setText(" ");
+        setUpSpinner1();
+        setUpSpinner2();
+        setUpSpinner3();
     }
 
 }
