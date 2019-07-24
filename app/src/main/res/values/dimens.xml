@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="standard_border">15dp</dimen>
+    <dimen name="spinner_width">90dp</dimen>
+    <dimen name="spinner_hieght">25dp</dimen>
 </resources>
