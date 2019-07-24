@@ -194,7 +194,8 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_about) {
             Utils.showInfoDialog(this, R.string.about, R.string.about_body);
         } else if (item.getItemId() == R.id.action_chart) {
-            Utils.showInfoDialog(this, R.string.full_chart, R.drawable.chart );
+            Intent intent = new Intent(this, ResultsActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
 
