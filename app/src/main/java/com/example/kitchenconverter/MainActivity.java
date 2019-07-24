@@ -49,21 +49,21 @@ public class MainActivity extends AppCompatActivity {
 
     private void setUpSpinner1() {
         mSpinnerFraction = findViewById(R.id.spinner_fraction);
-        String[] fractions = new String[]{"Select Fraction", "none", "3/4", "2/3", "1/2", "1/3", "1/4", "1/8", "1/16"};
+        String[] fractions = new String[]{"Select", "none", "3/4", "2/3", "1/2", "1/3", "1/4", "1/8", "1/16"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, fractions);
         mSpinnerFraction.setAdapter(adapter);
     }
 
     private void setUpSpinner2() {
         mSpinnerMeasurement = findViewById(R.id.spinner_measurement);
-        String[] measurements = new String[]{"Select Measurement", "cups", "teaspoons", "tablespoons", "ounces"};
+        String[] measurements = new String[]{"Select", "cups", "tsp", "tbsp", "oz"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, measurements);
         mSpinnerMeasurement.setAdapter(adapter);
     }
 
     private void setUpSpinner3() {
         mSpinnerMeasurement2 = findViewById(R.id.spinner_measurement2);
-        String[] measurements = new String[]{"Select Measurement", "cups", "teaspoons", "tablespoons", "ounces"};
+        String[] measurements = new String[]{"Select", "cups", "tsp", "tbsp", "oz"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, measurements);
         mSpinnerMeasurement2.setAdapter(adapter);
     }
@@ -93,52 +93,52 @@ public class MainActivity extends AppCompatActivity {
             Snackbar.make(view, "The measurement cannot be empty.", Snackbar.LENGTH_LONG).show();
         } else {
             //cup to oz
-            if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("ounces")) {
+            if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("oz")) {
                 mTo = mMeasurement.cupToOz(mFrom);
             }
             //oz to cup
-            else if (typeFrom.equalsIgnoreCase("ounces") && typeTo.equalsIgnoreCase("cups")) {
+            else if (typeFrom.equalsIgnoreCase("oz") && typeTo.equalsIgnoreCase("cups")) {
                 mTo = mMeasurement.ozToCup(mFrom);
             }
             //cup to tbsp
-            else if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("tablespoons")) {
+            else if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("tbsp")) {
                 mTo = mMeasurement.cupToTbsp(mFrom);
             }
             //cup to tsp
-            else if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("teaspoons")) {
+            else if (typeFrom.equalsIgnoreCase("cups") && typeTo.equalsIgnoreCase("tsp")) {
                 mTo = mMeasurement.cupToTsp(mFrom);
             }
             //oz to tbsp
-            else if (typeFrom.equalsIgnoreCase("ounces") && typeTo.equalsIgnoreCase("tablespoons")) {
+            else if (typeFrom.equalsIgnoreCase("oz") && typeTo.equalsIgnoreCase("tbsp")) {
                 mTo = mMeasurement.ozToTbsp(mFrom);
             }
             //oz to tsp
-            else if (typeFrom.equalsIgnoreCase("ounces") && typeTo.equalsIgnoreCase("teaspoons")) {
+            else if (typeFrom.equalsIgnoreCase("oz") && typeTo.equalsIgnoreCase("tsp")) {
                 mTo = mMeasurement.ozToTsp(mFrom);
             }
             //tbsp to cup
-            else if (typeFrom.equalsIgnoreCase("tablespoons") && typeTo.equalsIgnoreCase("cups")) {
+            else if (typeFrom.equalsIgnoreCase("tbsp") && typeTo.equalsIgnoreCase("cups")) {
                 mTo = mMeasurement.tbspToCup(mFrom);
             }
             //tsp to cup
-            else if (typeFrom.equalsIgnoreCase("teaspoons") && typeTo.equalsIgnoreCase("cups")) {
+            else if (typeFrom.equalsIgnoreCase("tsp") && typeTo.equalsIgnoreCase("cups")) {
                 mTo = mMeasurement.tspToCup(mFrom);
             }
             //tbsp to oz
-            else if (typeFrom.equalsIgnoreCase("tablespoons") && typeTo.equalsIgnoreCase("ounces")) {
+            else if (typeFrom.equalsIgnoreCase("tbsp") && typeTo.equalsIgnoreCase("oz")) {
                 mTo = mMeasurement.tbspToOz(mFrom);
             }
             //tsp to oz
-            else if (typeFrom.equalsIgnoreCase("teaspoons") && typeTo.equalsIgnoreCase("ounces")) {
+            else if (typeFrom.equalsIgnoreCase("tsp") && typeTo.equalsIgnoreCase("oz")) {
                 mTo = mMeasurement.tspToOz(mFrom);
             }
             //tsp to tbsp
-            else if (typeFrom.equalsIgnoreCase("teaspoons") && typeTo.equalsIgnoreCase("tablespoons")) {
+            else if (typeFrom.equalsIgnoreCase("tsp") && typeTo.equalsIgnoreCase("tbsp")) {
                 mTo = mMeasurement.tspToTbsp(mFrom);
 
             }
             //tbsp to tsp
-            else if (typeFrom.equalsIgnoreCase("tablespoons") && typeTo.equalsIgnoreCase("teaspoons")) {
+            else if (typeFrom.equalsIgnoreCase("tbsp") && typeTo.equalsIgnoreCase("tsp")) {
                 mTo = mMeasurement.tbspToTsp(mFrom);
             }
             String msg = mFrom + " " + typeFrom + " is " + mTo + " " + typeTo + ".";
