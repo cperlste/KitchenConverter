@@ -4,21 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView.*;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -194,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_about) {
             Utils.showInfoDialog(this, R.string.about, R.string.about_body);
         } else if (item.getItemId() == R.id.action_chart) {
-            Intent intent = new Intent(this, ResultsActivity.class);
+            Intent intent = new Intent(this, ChartActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);

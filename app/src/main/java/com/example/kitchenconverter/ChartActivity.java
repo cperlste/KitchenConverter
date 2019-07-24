@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ResultsActivity extends AppCompatActivity {
- public ResultsActivity(){}
+public class ChartActivity extends AppCompatActivity {
+ public ChartActivity(){}
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results);
+        setContentView(R.layout.activity_chart);
 
     }
 }
