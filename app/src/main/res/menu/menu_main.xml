@@ -6,4 +6,10 @@
         android:icon="@android:drawable/ic_dialog_info"
         android:title="@string/about"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_chart"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="@string/full_chart"
+        app:showAsAction="never"
+        />
 </menu>

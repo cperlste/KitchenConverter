@@ -1,4 +1,16 @@
 package com.example.kitchenconverter;
 
-class ResultsActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class ResultsActivity extends AppCompatActivity {
+ public ResultsActivity(){}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_results);
+
+
+    }
 }

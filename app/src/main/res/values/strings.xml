@@ -3,4 +3,5 @@
     <string name="enter_whole_number_to_convert">Enter whole number to convert</string>
     <string name="about">About</string>
     <string name="about_body">App developed by: Batsheva Tannenbaum and Chaya Mindy Perlstein. Touro Summer Semester I 2019</string>
+    <string name="full_chart">View Full Conversion Chart</string>
 </resources>

@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Measurement mMeasurement;
     private String typeFrom, typeTo;
     private TextView mTVresults;
+    private DecimalFormat formatter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeFields() {
         mMeasurement = new Measurement();
-        wholeNumber=findViewById(R.id.enter_measure);
-        mTVresults=findViewById(R.id.converted_output);
+        wholeNumber = findViewById(R.id.enter_measure);
+        mTVresults = findViewById(R.id.converted_output);
+        formatter = new DecimalFormat("00.00");
     }
 
     private void setUpSpinner1() {
@@ -77,17 +79,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcResults(View view) {
         double decimal;
+        double numDouble;
         String typeFrom = mSpinnerMeasurement.getSelectedItem().toString();
         String typeTo = mSpinnerMeasurement2.getSelectedItem().toString();
         String strFraction = mSpinnerFraction.getSelectedItem().toString();
-        if(strFraction.equalsIgnoreCase("none")){
-            decimal=0.0;
-        }
-        else {
+        if (strFraction.equalsIgnoreCase("none")) {
+            decimal = 0.0;
+        } else {
             decimal = convertToDecimal(strFraction);
         }
         String strWholeNum = wholeNumber.getText().toString();
-        double numDouble = Double.parseDouble(strWholeNum);
+        if (strWholeNum.matches("")) {
+            numDouble=0.0;
+        } else {
+            numDouble = Double.parseDouble(strWholeNum);
+        }
         double mFrom = numDouble + decimal;
         if (mFrom == 0.0) {
             Snackbar.make(view, "The measurement cannot be empty.", Snackbar.LENGTH_LONG).show();
@@ -141,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             else if (typeFrom.equalsIgnoreCase("tbsp") && typeTo.equalsIgnoreCase("tsp")) {
                 mTo = mMeasurement.tbspToTsp(mFrom);
             }
-            String msg = mFrom + " " + typeFrom + " is " + mTo + " " + typeTo + ".";
+            String msg = formatter.format(mFrom) + " " + typeFrom + " is " + formatter.format(mTo) + " " + typeTo + ".";
             mTVresults.setText(msg);
         }
     }
@@ -164,11 +170,12 @@ public class MainActivity extends AppCompatActivity {
         typeTo = savedInstanceState.getString("TYPE_TO");
 
     }
+
     public void resetAll(View view) {
         mTVresults.setText(" ");
-        mFrom=0.0;
-        mTo=0.0;
-        wholeNumber.setText(" ");
+        mFrom = 0.0;
+        mTo = 0.0;
+        wholeNumber.setText("");
         setUpSpinner1();
         setUpSpinner2();
         setUpSpinner3();
@@ -176,14 +183,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater ().inflate (R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.action_about){
-            Utils.showInfoDialog(getApplicationContext(),R.string.about, R.string.about_body);
+        if (item.getItemId() == R.id.action_about) {
+            Utils.showInfoDialog(this, R.string.about, R.string.about_body);
+        } else if (item.getItemId() == R.id.action_chart) {
+            Utils.showInfoDialog(this, R.string.full_chart, R.drawable.chart);
         }
         return super.onOptionsItemSelected(item);
 
