@@ -8,6 +8,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/kitchen_clipart"
+        android:scaleType="centerCrop"
+        android:alpha=".2"/>
+
     <include layout="@layout/content_main" />
 
 
