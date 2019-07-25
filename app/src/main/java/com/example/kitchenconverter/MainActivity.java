@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetAll(View view) {
-        mTVresults.setText(" ");
+        mTVresults.setText("");
         mFrom = 0.0;
         mTo = 0.0;
         wholeNumber.setText("");
