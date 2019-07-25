@@ -2,6 +2,11 @@
     <string name="app_name">Kitchen Converter</string>
     <string name="enter_whole_number_to_convert">Enter whole number to convert</string>
     <string name="about">About</string>
-    <string name="about_body">App developed by: Batsheva Tannenbaum and Chaya Mindy Perlstein. Touro Summer Semester I 2019</string>
+    <string name="about_body">App developed by: Batsheva Tanenbaum and Chaya Mindy Perlstein. Touro Summer Semester I 2019</string>
+    <string name="reset_all">Reset All</string>
+    <string name="convert">Convert</string>
+    <string name="enter_number">Enter number</string>
+    <string name="convert_to">Convert_to:</string>
     <string name="full_chart">View Full Conversion Chart</string>
+
 </resources>
