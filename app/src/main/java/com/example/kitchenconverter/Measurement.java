@@ -1,6 +1,6 @@
 package com.example.kitchenconverter;
 
-public class Measurement {
+class Measurement {
     private double cup, tbsp, tsp, oz;
 
     public Measurement() {
@@ -8,38 +8,6 @@ public class Measurement {
         tbsp = 0.0;
         tsp = 0.0;
         oz = 0.0;
-    }
-
-    public void setCup(double cups) {
-        cup = cups;
-    }
-
-    public void setTbsp(double tbsps) {
-        tbsp = tbsps;
-    }
-
-    public void setTsp(double tsp) {
-        this.tsp = tsp;
-    }
-
-    public void setOz(double oz) {
-        this.oz = oz;
-    }
-
-    public double getCup() {
-        return cup;
-    }
-
-    public double getTbsp() {
-        return tbsp;
-    }
-
-    public double getTsp() {
-        return tsp;
-    }
-
-    public double getOz() {
-        return oz;
     }
 
     public double ozToCup(double oz) {

@@ -65,13 +65,6 @@ public class MainActivity extends AppCompatActivity {
         mSpinnerMeasurement2.setAdapter(adapter);
     }
 
-
-    private double convertToDecimal(String strFraction) {
-        int numerator = Character.getNumericValue(strFraction.charAt(0));
-        int denominator = Character.getNumericValue(strFraction.charAt(2));
-        return (double) numerator / denominator;
-    }
-
     public void calcResults(View view) {
         double decimal;
         double numDouble;
@@ -146,7 +139,11 @@ public class MainActivity extends AppCompatActivity {
             mTVresults.setText(msg);
         }
     }
-
+    private double convertToDecimal(String strFraction) {
+        int numerator = Character.getNumericValue(strFraction.charAt(0));
+        int denominator = Character.getNumericValue(strFraction.charAt(2));
+        return (double) numerator / denominator;
+    }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
